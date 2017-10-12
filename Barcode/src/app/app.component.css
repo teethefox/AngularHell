@@ -1,0 +1,31 @@
+.black{
+    background-color:black;
+}
+.maroon{
+background-color:maroon;
+}
+.midnightblue{
+    background-color:midnightblue; 
+}
+.mediumvioletred{
+    background-color:mediumvioletred;
+}
+.darkgrey{
+    background-color:darkgrey;
+}
+.yellow{
+    background-color: yellow;
+}
+.orange{
+    background-color: orange;
+}
+.aqua{
+    background-color: aqua;
+}
+.box{
+    border:1px solid;
+    height:150px;
+    width:2%;
+    margin-right:-11px;
+    display:inline-block;
+}
