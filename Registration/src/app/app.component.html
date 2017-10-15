@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  
+  <title>Document</title>
+</head>
+<body> <div *ngIf='password.valid && user.confirm == user.password && email.valid && fname.valid && lname.valid && street.valid && city.valid && state.valid && lucky.dirty '>
+  Congrats! you have successfully registered! a confirmation email has been sent to you at
+  <a>{{user.email | json}}</a>! And we will send all mail to {{ user.street | json}}, {{user.city | json}} {{user.state | json}}. Got ya, sucka!</div>
+  <table>
+  <form class="form-group" name="myform" #myform="ngForm" submit="onSubmit()">
+    <tr>
+    <td>*First Name:
+    <input type="text" name="fname" required minlength="1" maxlength="25" [(ngModel)]="user.fname" #fname='ngModel'></td>
+    <td>
+    <div *ngIf="!fname.valid && fname.dirty"> First Name is required</div></td>
+  </tr><tr>
+    <td>
+    
+    *Last Name:
+    <input type="text" name="lname" required [(ngModel)]="user.lname" #lname='ngModel'></td>  
+    <td><div *ngIf="!lname.valid && lname.dirty"> Last Name is required</div></td>
+</tr><tr><td>
+    *Email:
+    <input type="email" name="email" required [(ngModel)]="user.email" #email='ngModel' pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"></td>
+  <td><div *ngIf="!email.valid && email.dirty"> Email is invalid</div></td>
+</tr><tr><td>
+    *Password
+    <input type="password" name="password" required [(ngModel)]="user.password" #password='ngModel'></td>
+  <td><div *ngIf="!password.valid && password.dirty"> Password is required</div></td>
+</tr><tr><td>
+    *Confirm Password
+    <input type="password" name="confirm" required  [(ngModel)]="user.confirm" #confirm='ngModel'></td>
+<td><div *ngIf="user.confirm != user.password"> Passwords must match!</div></td>
+</tr><tr><td>
+    *Street Address:
+    <input type="text" name="street" required [(ngModel)]="user.street" #street='ngModel'></td>
+ <td> <div *ngIf="!street.valid && street.dirty">Street Name is required</div></td>
+</tr><tr><td>
+    Apt/Unit:
+    <input type="text" name="unit" [(ngModel)]="user.unit" #unit='ngModel'></td>
+ <td> <div ></div></td>
+</tr><tr><td>
+    *City:
+    <input type="text" name="city" required [(ngModel)]="user.city" #city='ngModel'></td>
+  <td><div *ngIf="!city.valid && city.dirty"> First Name is required</div></td>
+</tr><tr><td>
+    *State:
+    <select name="state" required [(ngModel)]="user.state" #state='ngModel'>
+      <option>California</option>
+      <option>California</option>
+      <option>California</option>
+      <option>California</option>
+      
+    </select></td>
+<td>  <div *ngIf="!state.valid && state.dirty"> First Name is required</div></td>
+</tr><tr><td>
+    *Feeling Lucky?
+    Yes
+    <input type="radio" name="lucky" required [(ngModel)]="user.lucky" #lucky='ngModel'>
+    
+    No
+    <input type="radio" name="lucky" ><br></td>
+    <td><div *ngIf="!lucky.dirty">Tell us how you really feel!</div>
+  </td>
+  </tr>
+    <button (click)="onSubmit()" type="submit" class="btn" *ngIf="password.valid && user.confirm == user.password && email.valid && fname.valid && lname.valid && street.valid && city.valid && state.valid && lucky.dirty">Register</button>
+  </form>
+  </table>
+  
+ 
+</body>
+</html>
