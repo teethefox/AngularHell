@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+
+  <h4>Calculate Power Levels! 
+  <input  type="number" max="100" min="0" [(ngModel)]="power"></h4>
+
+<div class="list-group container">
+  <div class="row">
+<ul>
+  <div class="col">
+<li class="list-group-item list-group-item-action flex-column align-items-start active"><app-one [power]="power"></app-one></li>
+<li class="list-group-item list-group-item-action flex-column align-items-start active"><app-two [power]="power"></app-two></li>
+<li class="list-group-item list-group-item-action flex-column align-items-start active"><app-three [power]="power"></app-three></li></div>
+<div class="col">
+<li class="list-group-item list-group-item-action flex-column align-items-start active"><app-four [power]="power"></app-four></li>
+<li class="list-group-item list-group-item-action flex-column align-items-start active"><app-five [power]="power"></app-five></li>
+<li class="list-group-item list-group-item-action flex-column align-items-start active"><app-six [power]="power"></app-six></li></div>
+</ul>
+</div>
+</div>

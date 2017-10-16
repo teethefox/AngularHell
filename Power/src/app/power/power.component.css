@@ -1,0 +1,9 @@
+li{
+    list-style: none;
+    display:inline-block;
+    border:2px solid;
+    width:30%;
+    height:250px;
+    margin:10px;
+    text-overflow: left;
+}
