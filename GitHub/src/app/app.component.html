@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  
+  <title>Document</title>
+</head>
+<body>
+  <div class="jumbotron">
+  <h1 >Github or Githome</h1>
+  <p>Calculate your Github score based on number of repos and number of followers</p></div>
+  <div class="container">
+  <form class="form row" (submit)="calcscore()" #formData="ngForm">
+      <div class="input-group-addon">@</div>
+    <input class="col-form-label form-control col" type='text' name='username' required [(ngModel)]="username" placeholder="Username"><br>
+    <button class="btn btn-primary" [disabled]="!formData.valid" type="submit" >"Calculate my Github score!"</button>
+  </form></div>
+  <div *ngIf="exists===true">
+    <h1 class="text-center">{{score}}</h1>
+    <div *ngIf="score < 20">
+      <h3 class="red">Needs Work!</h3>
+    </div>
+    <div *ngIf="score < 50 && score >= 20">
+      <h3 class='text-center orange'>A decent start!</h3>
+    </div>
+    <div *ngIf="score < 100 && score >= 50">
+      <h3 class="text-center">Doin' good!</h3>
+    </div>
+    <div *ngIf="score < 200 && score >= 100">
+      <h3 class=" text-center green">Great Job!</h3>
+    </div>
+    <div *ngIf="score >=200">
+      <h3 class="text-center blue">Github Elite/Get A Life!</h3>
+    </div>
+  </div>
+  <div *ngIf="exists===false">
+    <h4 class="text-center">User does not exist,nice try tho.</h4>
+  </div>
+</body>
+</html>
