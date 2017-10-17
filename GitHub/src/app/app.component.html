@@ -16,7 +16,7 @@
   <form class="form row" (submit)="calcscore()" #formData="ngForm">
       <div class="input-group-addon">@</div>
     <input class="col-form-label form-control col" type='text' name='username' required [(ngModel)]="username" placeholder="Username"><br>
-    <button class="btn btn-primary" [disabled]="!formData.valid" type="submit" >"Calculate my Github score!"</button>
+    <button class="btn btn-primary" [disabled]="!formData.valid" type="submit" >Calculate my Github score!</button>
   </form></div>
   <div *ngIf="exists===true">
     <h1 class="text-center">{{score}}</h1>
