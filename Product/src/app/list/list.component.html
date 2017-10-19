@@ -1,0 +1,14 @@
+<div class="container ">
+  <div class="row">
+  <div class="text-center col-6" *ngFor="let product of products" >
+  <h1>{{product.title}}</h1>
+ 
+  <img class="img-fluid" *ngIf="product.image" [src]="product.image" style="max-height: 350px"> 
+  <h1 class="text-center" >{{product.price | currency : US: true }}</h1>
+  <h3 *ngIf="!product.image">No Image Available.</h3>
+  <a class="btn btn-primary btn-block" [routerLink]="[ 'edit', product.id]" >Edit</a>
+  <button class="btn btn-primary btn-block" (click)="delete(product)">Delete</button>
+  
+</div>
+</div>
+</div>

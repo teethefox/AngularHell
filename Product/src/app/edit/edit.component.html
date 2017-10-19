@@ -1,0 +1,13 @@
+<div class="container">
+    <form class="form-group" #formData="ngForm" >
+        *Title:
+        <input class="form-control" type="text" name='title' [(ngModel)]="product.title" #title='ngModel' required minlength="4" >
+        *Price:
+        <input class="form-control" type="text" name="price" required [(ngModel)]="product.price"  #price='ngModel'>
+        Image Url:
+        <input class="form-control" type="text" name="image"  [(ngModel)]="product.image"  #image='ngModel'><br>
+      
+  <button type="submit" class="btn btn-primary btn-block" [disabled]="!formData.valid" (click)="edit()" >Update</button>
+  <button class="btn btn-primary btn-block" (click)="kill()">Delete</button>
+</form>
+</div>
